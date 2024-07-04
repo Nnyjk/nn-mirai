@@ -1,4 +1,5 @@
 plugins {
+    kotlin("jvm") version "2.0.0"
     java
     id("io.quarkus")
 }
@@ -24,14 +25,17 @@ dependencies {
     implementation("io.quarkus:quarkus-hibernate-orm")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured")
+    api(platform("net.mamoe:mirai-bom:2.16.0"))
+    api("net.mamoe:mirai-core-api")     // 编译代码使用
+    runtimeOnly("net.mamoe:mirai-core") // 运行时使用
 }
 
 group = "com.nn"
 version = "1.0.0-SNAPSHOT"
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 tasks.withType<Test> {
