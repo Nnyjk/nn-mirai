@@ -1,0 +1,7 @@
+version: '3.1'
+services:
+  hjzl-extend:
+    image: nn-mirai:latest
+    container_name: nn-mirai
+    ports:
+      - "9093:8080"
